@@ -1,19 +1,38 @@
 import React, { useState } from "react";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [name,setName] = useState("");
-  const [email,setEmail] = useState("");
-  const [message,setMessage] = useState("");
-
-  const submitHandler = () => {
-
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
   }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "test", name, email, message }),
+    })
+      .then(() => alert("Message sent!"))
+      .catch((error) => alert(error));
+  };
 
   return (
     <section id="contact">
       <div className="container flex flex-wrap sm:flex-nowrap mx-auto justify-center">
-        <form name="contactForm" onSubmit={submitHandler} className="flex flex-col w-full px-20 py-10 md:w-1/2 lg:w-1/3 md:px-0 font-medium">
+        <form
+          netlify
+          name="contactForm"
+          onSubmit={submitHandler}
+          className="flex flex-col w-full px-20 py-10 md:w-1/2 lg:w-1/3 md:px-0 font-medium"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -32,18 +51,36 @@ const Contact = () => {
           <h1 className="text-3xl text-center mb-4">Contact to me</h1>
           <div className="relative mb-4 items-center">
             <label className="">Name</label>
-            <input className="w-full h-10 rounded-md px-5" id="name" name="name" onChange={(e)=>setName(e.target.value)}></input>
+            <input
+              className="w-full h-10 rounded-md px-5"
+              id="name"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+            ></input>
           </div>
           <div className="relative mb-4 items-center">
             <label className="">Email</label>
-            <input className="w-full h-10 rounded-md px-5" id="email" name="email" onChange={(e)=>setEmail(e.target.value)}></input>
+            <input
+              className="w-full h-10 rounded-md px-5"
+              id="email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
           </div>
           <div className="relative mb-8 items-center">
             <label className="">Message</label>
-            <textarea className="w-full h-20 rounded-md px-5" id="message" name="message" onChange={(e)=>setMessage(e.target.value)}></textarea>
+            <textarea
+              className="w-full h-20 rounded-md px-5"
+              id="message"
+              name="message"
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
           </div>
           <div className="relative mb-4 flex justify-center">
-            <button className="bg-yellow-300 border-0 rounded-md text-black px-6 py-3 w-fit" type="submit">
+            <button
+              className="bg-yellow-300 border-0 rounded-md text-black px-6 py-3 w-fit"
+              type="submit"
+            >
               Submit
             </button>
           </div>
