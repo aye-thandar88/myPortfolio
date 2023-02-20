@@ -3,8 +3,8 @@ import React from "react";
 const About = () => {
   return (
     <section id="about">
-      <div className="container flex flex-col md:flex-row mx-auto p-20">
-        <div className="md:w-1/2 mr-20 items-center flex-col px-20">
+      <div className="container flex flex-col justify-center md:flex-row mx-auto p-20">
+        <div className="md:w-1/2 items-center flex-col lg:px-20 md:px-0">
           <h1 className="mb-4 text-3xl">
             Hi, I'm Reed.I love to build amazing apps.
           </h1>
@@ -18,7 +18,7 @@ const About = () => {
             <a href="#experiences" className="bg-gray-800 text-white px-6 py-3 rounded-md text-center">See my experiences</a>
           </div>
         </div>
-        <div className="md:w-1/2 items-center flex justify-center">
+        <div className="md:w-1/2  lg:w-1/3 items-center flex justify-center px-5">
           <img
             className="w-full h-fit"
             alt="hero"

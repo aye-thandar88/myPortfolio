@@ -4,7 +4,7 @@ const Experiences = () => {
   return (
     <section id="experiences">
       <div className="container items-center text-center mx-auto my-10 px-20">
-        <div className="mb-5 flex flex-col items-center">
+        <div className="my-5 flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -27,7 +27,7 @@ const Experiences = () => {
           </p>
         </div>
         <div className="flex flex-wrap flex-col md:flex-row p-5 justify-between">
-          <a className="sm:w-1/2 w-100 p-5">
+          <a className="sm:w-1/2 w-100 ">
             <div className="flex relative">
               <img
                 alt="exp"
@@ -46,7 +46,7 @@ const Experiences = () => {
               </div>
             </div>
           </a>
-          <a className="sm:w-1/2 w-100 p-5">
+          <a className="sm:w-1/2 w-100 ">
             <div className="flex relative">
               <img
                 alt="exp"

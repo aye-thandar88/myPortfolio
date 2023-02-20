@@ -2,7 +2,6 @@ import React from "react";
 import { skills } from "../data";
 
 const Skills = () => {
-  console.log(skills);
   return (
     <section id="skills">
       <div className="container items-center text-center mx-auto mb-10 px-20">

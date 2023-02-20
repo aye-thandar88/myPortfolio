@@ -9,7 +9,7 @@ const Navbar = () => {
             <a href="#experiences" className="mr-5 ml-5 hover:text-white">Experiences</a>
             <a href="#skills" className="mr-5 hover:text-white">Skills</a>
         </nav>
-        <a href="#contact" className= "hover:text-white inline-flex items-center py-1 ml-auto">Profile</a>
+        <a href="#contact" className= "hover:text-white inline-flex items-center py-1 ml-auto">Contact</a>
       </div>
     </header>
   );
